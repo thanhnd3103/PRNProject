@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Markdig" Version="0.31.0" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="3.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.17">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -19,6 +20,13 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1823.32" />
+    <PackageReference Include="NAudio" Version="2.1.0" />
+    <PackageReference Include="Syncfusion.Grid.Windows" Version="21.2.10" />
+    <PackageReference Include="Syncfusion.Schedule.Windows" Version="21.2.10" />
+    <PackageReference Include="Syncfusion.Shared.Base" Version="21.2.10" />
+    <PackageReference Include="Syncfusion.Tools.Windows" Version="21.2.10" />
+    <PackageReference Include="System.Globalization.Calendars" Version="4.3.0" />
   </ItemGroup>
 
 </Project>
