@@ -36,11 +36,13 @@
             // webView21
             // 
             webView21.AllowExternalDrop = true;
+            webView21.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             webView21.CreationProperties = null;
             webView21.DefaultBackgroundColor = Color.White;
             webView21.Location = new Point(0, 0);
+            webView21.Margin = new Padding(6, 6, 6, 6);
             webView21.Name = "webView21";
-            webView21.Size = new Size(815, 798);
+            webView21.Size = new Size(1746, 1690);
             webView21.Source = new Uri("https://dillinger.io/", UriKind.Absolute);
             webView21.TabIndex = 0;
             webView21.ZoomFactor = 1D;
@@ -48,9 +50,10 @@
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(12, 810);
+            btnBack.Location = new Point(26, 1715);
+            btnBack.Margin = new Padding(6, 6, 6, 6);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(75, 23);
+            btnBack.Size = new Size(161, 49);
             btnBack.TabIndex = 1;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = true;
@@ -58,11 +61,12 @@
             // 
             // Form3
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(15F, 36F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(815, 845);
+            ClientSize = new Size(1746, 1789);
             Controls.Add(btnBack);
             Controls.Add(webView21);
+            Margin = new Padding(6, 6, 6, 6);
             Name = "Form3";
             Text = "Markdown";
             ((System.ComponentModel.ISupportInitialize)webView21).EndInit();

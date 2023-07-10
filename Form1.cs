@@ -42,8 +42,10 @@ namespace PRNProject
         }
         public void SetDataInGridView(int UserId)
         {
+            dataGridView1.AutoGenerateColumns = false;
             var userNotes = db.Notes.Where(n => n.UserId == Login.UserSession.UserID).ToList();
             dataGridView1.DataSource = userNotes;
+            
         }
 
         private void bttNew_Click(object sender, EventArgs e)
@@ -63,11 +65,24 @@ namespace PRNProject
             newNote.Title = txtTitle.Text.Trim();
             newNote.Message = txtMessage.Text.Trim();
             newNote.UserId = Login.UserSession.UserID;
+
             if (EmpId > 0)
+            {
+                newNote.NoteId = EmpId;
+                var existingNote = db.Notes.Local.FirstOrDefault(n => n.NoteId == EmpId);
+                if (existingNote != null)
+                {
+                    db.Entry(existingNote).State = EntityState.Detached;
+                }
+
+                db.Notes.Attach(newNote); // Attach the newNote entity to the context
                 db.Entry(newNote).State = EntityState.Modified;
+            }
             else
             {
-                db.Notes.Add(newNote);
+                notesRepository = new NoteRepository();
+                notesRepository.Add(newNote);
+                //db.Notes.Add(newNote);
             }
             db.SaveChanges();
 
